@@ -13,15 +13,14 @@ def reverse_string1(str):   #reference
     """
     return " ".join(str.split()[::-1]) #分割後切片（所有數，從後面往前取）
 
-def exch(list, a, b):
-    list[a], list[b] = list[b], list[a]
-    return list
 
-def reverse_s(list):
-    re_list = []
-    for i in range(len(list)//2):
-        re_list = exch(list, i, len(list)-i-1)
-    return re_list
+def exch(seq, a, b):
+    seq[a], seq[b] = seq[b], seq[a]
+
+
+def reverse_s(seq):
+    for i in range(len(seq) // 2):
+        exch(seq, i, len(seq) - i - 1)
 
 def reverse_string2(str):
     """
@@ -122,6 +121,10 @@ def reverse_string4(s): # using list
     else:
         reverse_s(seq)
         result = ' '.join(seq)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 85f55b89d3f8ea9ce837f9a468bc74db24461cea
     return result
 
 doctest.testmod(verbose = 1)
