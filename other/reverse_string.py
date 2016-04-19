@@ -121,10 +121,6 @@ def reverse_string4(s): # using list
     else:
         reverse_s(seq)
         result = ' '.join(seq)
-<<<<<<< HEAD
-=======
-
->>>>>>> 85f55b89d3f8ea9ce837f9a468bc74db24461cea
     return result
 
 doctest.testmod(verbose = 1)
