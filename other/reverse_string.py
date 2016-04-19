@@ -13,15 +13,12 @@ def reverse_string1(str):   #reference
     """
     return " ".join(str.split()[::-1]) #分割後切片（所有數，從後面往前取）
 
-def exch(list, a, b):
-    list[a], list[b] = list[b], list[a]
-    return list
+def exch(seq, a, b):
+    seq[a], seq[b] = seq[b], seq[a]
 
-def reverse_s(list):
-    re_list = []
-    for i in range(len(list)//2):
-        re_list = exch(list, i, len(list)-i-1)
-    return re_list
+def reverse_s(seq):
+    for i in range(len(seq)//2):
+        exch(seq, i, len(seq) - i - 1)
 
 def reverse_string2(str):
     """
@@ -91,9 +88,7 @@ def reverse_string3(s): # using string
         res = word + res
     return res
 
-def reverse_string4(s): # using list ----<> still not working
-    # while not working:
-    #     print(dirty word)
+def reverse_string4(s): # using list
     """
     >>> s = 'sky is blue'
     >>> reverse_string4(s)
@@ -104,36 +99,26 @@ def reverse_string4(s): # using list ----<> still not working
     >>> s3 = ''
     >>> reverse_string4(s3)
     ''
-    >>> s4 = 'hey  ' # this is not working damn （ˋ＿＿＿ˊ）
+    >>> s4 = 'hey  '
     >>> reverse_string4(s4)
     'hey'
     """
     word = ''
-    result = ''
-    list = []
+    seq = []
     for char in s:
         if char != ' ':
             word += char
         if char == ' ':
             if len(word) != 0:
-                list.append(word)
+                seq.append(word)
                 word = ''
     if len(word) != 0:
-        if len(list)!= 0:
-            list.append(word)
-            re_list = reverse_s(list)
-            result = ' '.join(re_list)
-        else:
-            list.append(word)
-            result = ''.join(list)
-    if len(word) == 0:
-        if len(list) != 0:
-            list.append(word)
-            re_list = reverse_s(list)
-            result = ' '.join(re_list)
-        else:
-            list.append(word)
-            result = ''.join(list)
+        seq.append(word)
+        reverse_s(seq)
+        result = ' '.join(seq)
+    else:
+        reverse_s(seq)
+        result = ' '.join(seq)
     return result
 
 doctest.testmod(verbose = 1)
