@@ -22,6 +22,33 @@ def reverse_s(seq):
     for i in range(len(seq) // 2):
         exch(seq, i, len(seq) - i - 1)
 
+def reverse_str(seq): # 回文＿matt
+    i = 0
+    j = len(seq) - 1
+    while i < j:
+        exch(seq, i, j)
+        i += 1
+        j -= 1
+
+def permutation(string):
+    """
+    >>> permutation("abcdcba")
+    True
+    >>> permutation("ada")
+    True
+    >>> permutation("abc")
+    False
+    """
+    i = 0
+    j = len(string) - 1
+    while i < j:
+        if string[i] != string[j]:
+            return False
+        i += 1
+        j -= 1
+    return True
+
+
 def reverse_string2(str):
     """
     >>> s = 'sky is blue'
