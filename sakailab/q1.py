@@ -7,7 +7,7 @@ def upper(s):
         lst[i] = lst[i][0].capitalize()
     return "".join(lst)
 
-s = 'I am a real sakai lab student'
+s = "I am a real sakai lab student"
 output = upper(s)
 print(output) #IAARSLS
 
