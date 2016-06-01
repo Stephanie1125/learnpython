@@ -19,8 +19,7 @@ def count(str):
         d[c] = d.get(c, 0) + 1
     return d
 
-i = {}
-i = counts('aaabbeoalar')
+i = count('aaabbeoalar')
 print(i)
 
 
