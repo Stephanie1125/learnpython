@@ -1,4 +1,4 @@
-from itertools import combinations
+
 
 def perm_lst(lst):
     if len(lst) == 0:

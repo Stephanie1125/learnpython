@@ -1,9 +1,12 @@
 import doctest
+
+
 #------------------------------------------------------------------------------
 
 # reverse string (with white space) using split
 
 #------------------------------------------------------------------------------
+
 
 def reverse_string1(str):   #reference
     """
@@ -22,6 +25,7 @@ def reverse_s(seq):
     for i in range(len(seq) // 2):
         exch(seq, i, len(seq) - i - 1)
 
+
 def reverse_str(seq): # 回文＿matt
     i = 0
     j = len(seq) - 1
@@ -29,6 +33,7 @@ def reverse_str(seq): # 回文＿matt
         exch(seq, i, j)
         i += 1
         j -= 1
+
 
 def permutation(string):
     """
@@ -58,11 +63,13 @@ def reverse_string2(str):
     s_list = str.split()
     " ".join(reverse_s(s_list))
 
+
 #------------------------------------------------------------------------------
 
 # reverse sting (without white space)
 
 #------------------------------------------------------------------------------
+
 
 def reverse1(str):
     """
@@ -77,6 +84,7 @@ def reverse1(str):
         n -= 1
     return ''.join(new_string)
 
+
 def reverse2(str):
     """
     >>> s = 'abcdef'
@@ -88,11 +96,13 @@ def reverse2(str):
         exch(s_list, i, len(str)-i-1)
     return ''.join(s_list)
 
+
 #------------------------------------------------------------------------------
 
 # reverse string (with white space) without split
 
 #------------------------------------------------------------------------------
+
 
 def reverse_string3(s): # using string
     """
@@ -116,6 +126,7 @@ def reverse_string3(s): # using string
             res = ' ' + res
         res = word + res
     return res
+
 
 def reverse_string4(s): # using list
     """
@@ -149,5 +160,12 @@ def reverse_string4(s): # using list
         reverse_s(seq)
         result = ' '.join(seq)
     return result
+
+
+def reverse(text):
+    t = list(text)
+    for i in range(len(t)//2):
+        t[i], t[len(t)-1-i] = t[len(t)-1-i], t[i]
+    return "".join(t)
 
 doctest.testmod(verbose = 1)
