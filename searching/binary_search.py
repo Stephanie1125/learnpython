@@ -1,6 +1,7 @@
 __author__ = 'stephanie'
 import doctest
 
+
 def binary_search(seq, key):
     """
     >>> seq1 = [0, 1, 2, 3, 4, 5]

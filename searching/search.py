@@ -252,6 +252,7 @@ def searchRange(A, target):
     last = Find_the_last_index(A, target)
     return [first, last]
 
+
 def B_search(lst, target): # return boolean
     """
     >>> seq1 = [0, 1, 2, 4, 4, 5]
@@ -286,6 +287,7 @@ def B_search(lst, target): # return boolean
         return True
     else:
         return False
+
 
 def Woodcut(L, k):
     if sum(L) < k:

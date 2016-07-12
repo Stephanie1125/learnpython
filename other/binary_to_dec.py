@@ -4,11 +4,12 @@ def binary(dec):
     """
     >>> dec = 16
     >>> binary(dec)
-    10000
+    1 0 0 0 0
     """
     if dec > 1:
         binary(dec//2)
-    print(dec % 2, end = '')
+    print(dec % 2),
+
 
 def decimal(bin):
     """
